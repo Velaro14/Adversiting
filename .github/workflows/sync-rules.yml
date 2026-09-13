@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      # Includes ABP anchor/wildcard/case semantics and AdAway exact-host checks.
+      # Semantic regression suite: ABP anchor/wildcard/case and AdAway exact-host behavior.
       - name: Run converter regression tests
         run: python -m unittest scripts/test_converter.py
 
