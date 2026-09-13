@@ -1,24 +1,45 @@
 {
-  "source": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt",
-  "upstream_title": "晴雅广告拦截规则",
-  "upstream_version": "1.8.5",
-  "source_sha256": "9a23b05fcf1bb44a2521f61fb4c7f202a0c7e344171614eaf68684dd97262d42",
-  "converter_sha256": "b1a2cb5bca958bda57a47a2786bbde990a8af68d6802c5cad509173b4929be74",
-  "last_sync_utc": "2026-09-13T13:27:46+00:00",
+  "sources": {
+    "qy_ads_rule": {
+      "url": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt",
+      "title": "晴雅广告拦截规则",
+      "version": "1.8.5",
+      "sha256": "9a23b05fcf1bb44a2521f61fb4c7f202a0c7e344171614eaf68684dd97262d42",
+      "parsed": {
+        "domain_suffix": 549,
+        "domain_keyword": 1,
+        "domain_wildcard": 18,
+        "port_specific": 1,
+        "unsupported": 3
+      }
+    },
+    "adaway": {
+      "url": "https://adaway.org/hosts.txt",
+      "sha256": "8c925c37a5eaa5e1c582c76e12301797861addee5ad0fa0e6e46c9dd0136fe55",
+      "parsed_exact_domains": 6540,
+      "skipped_non_domain_entries": 0,
+      "shadowed_by_qy_suffix": 75
+    }
+  },
+  "combined_source_sha256": "7764e7ec528b5027c7b27dc0400ddd7fb8815f14be4528e6627463f26ec24d14",
+  "converter_sha256": "785963e4119e0a2fcafb34c7e549ccb5f888db7fbf587fa20a0c6a179d9fb5ee",
+  "last_sync_utc": "2026-09-13T13:35:20+00:00",
   "counts": {
+    "domain_exact": 6465,
     "domain_suffix": 549,
     "domain_keyword": 1,
     "domain_wildcard": 18,
     "port_specific": 1,
-    "unsupported": 3
+    "unsupported": 3,
+    "portable_total": 7034
   },
   "coverage": {
-    "surge_portable_exact": 569,
-    "mihomo_portable_exact": 569,
-    "singbox_portable_exact": 569,
-    "xray_portable_exact": 569,
-    "loon_domain_exact": 551,
+    "surge_portable_exact": 7034,
+    "mihomo_portable_exact": 7034,
+    "singbox_portable_exact": 7034,
+    "xray_portable_exact": 7034,
+    "loon_domain_exact": 7016,
     "loon_http_compensated_wildcards": 18,
-    "quanx_without_port": 568
+    "quanx_without_port": 7033
   }
 }
