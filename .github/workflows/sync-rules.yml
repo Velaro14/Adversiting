@@ -2,6 +2,7 @@ name: Sync upstream advertising rules
 
 on:
   schedule:
+    # 19:17 UTC = 03:17 Asia/Shanghai (next day)
     - cron: "17 19 * * *"
   workflow_dispatch:
   push:
@@ -20,6 +21,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout rules branch
         uses: actions/checkout@v4
