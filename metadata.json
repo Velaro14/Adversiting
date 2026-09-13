@@ -3,8 +3,8 @@
   "upstream_title": "晴雅广告拦截规则",
   "upstream_version": "1.8.5",
   "source_sha256": "9a23b05fcf1bb44a2521f61fb4c7f202a0c7e344171614eaf68684dd97262d42",
-  "converter_sha256": "582950196cf58a75e9ed36d1db5aa443b28fa7c4404e7ca76c58d4e5c1e8a34c",
-  "last_sync_utc": "2026-09-13T13:25:46+00:00",
+  "converter_sha256": "b1a2cb5bca958bda57a47a2786bbde990a8af68d6802c5cad509173b4929be74",
+  "last_sync_utc": "2026-09-13T13:27:46+00:00",
   "counts": {
     "domain_suffix": 549,
     "domain_keyword": 1,
