@@ -22,8 +22,8 @@
     }
   },
   "combined_source_sha256": "7764e7ec528b5027c7b27dc0400ddd7fb8815f14be4528e6627463f26ec24d14",
-  "converter_sha256": "d35ff2634f8dfb77b9cce3ebc065be450527e4cdf0d78035ee1aca8b18a085e7",
-  "last_sync_utc": "2026-09-13T13:48:44+00:00",
+  "converter_sha256": "f1e2f3eafd896a7c9696af886d24cf7eea9128b8e8066ba4911784e15642e60c",
+  "last_sync_utc": "2026-09-13T13:57:18+00:00",
   "counts": {
     "domain_exact": 6490,
     "domain_suffix": 545,
