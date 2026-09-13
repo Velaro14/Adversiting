@@ -7,7 +7,7 @@
 - `https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt`
 - `https://adaway.org/hosts.txt`
 
-实际规则维护在 [`rules-sync`](https://github.com/Velaro14/Adversiting/tree/rules-sync) 分支；本分支保留 GitHub Actions 定时任务，因为 GitHub 的 scheduled workflow 只从默认分支执行。
+实际规则维护在 [`rules-sync`](https://github.com/Velaro14/Adversiting/tree/rules-sync) 分支；默认分支 `main` 保留 GitHub Actions 定时任务，因为 scheduled workflow 由默认分支读取。
 
 ## 订阅地址
 
@@ -20,14 +20,20 @@
 | sing-box | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/SingBox.json` |
 | Xray | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Xray.json` |
 
-## 合并规则
+## 转换语义
 
-晴雅的 ABP 域名规则保持后缀/通配语义；AdAway hosts 文件中的域名保持**精确主机名**语义，不会擅自转换成 `DOMAIN-SUFFIX`。两边重复或已被晴雅后缀规则覆盖的 AdAway 精确域名会自动去重。
+- 晴雅普通 `||domain^` 保持根域+子域后缀语义。
+- `||*.domain^` 保持 wildcard，不再错误降级成包含根域的 `DOMAIN-SUFFIX`。
+- AdAway hosts 保持**精确主机名**，不会扩大成域名后缀。
+- 复杂 ABP wildcard 做 hostname projection：Mihomo 使用 `DOMAIN-REGEX`，sing-box/Xray 使用正则；Surge/QuanX 用原生 wildcard 并补足 `||` 的子域标签边界。
+- Loon 没有域名级 wildcard/regex，22 条 wildcard 使用 HTTP(S) `URL-REGEX` 补偿，不宣称为所有协议上的完整等价。
+- QuanX 暂不输出那 1 条“域名 + 目标端口”规则，避免将其扩大为整个域名拦截。
+- 依赖 URL 路径/query/app modifier 的规则放入 `rules/unsupported.txt`，不做猜测式扩大。
 
-`Clash.yaml` 只针对现代 **Mihomo / Clash.Meta**，可使用 `DOMAIN-WILDCARD`、`DST-PORT` 与逻辑规则。Loon 的复杂 wildcard 使用 `URL-REGEX` 做 HTTP/HTTPS 补偿，因为 Loon 没有域名级 wildcard/regex 类型。
+当前审计后的详细规则数量、语义说明和客户端差异见 `rules-sync/metadata.json` 与 `rules-sync/README.md`。
 
-## 自动更新
+## 自动更新与校验
 
-`.github/workflows/sync-rules.yml` 每天约 **03:17（UTC+8）** 同时检查两个上游，并 checkout `rules-sync` 分支运行转换器。只有任一上游或转换器发生变化时才提交更新；如果任一上游下载失败，本次同步直接失败并保留上一版有效规则。
+`.github/workflows/sync-rules.yml` 每天约 **03:17（UTC+8）** checkout `rules-sync`，依次执行回归测试、双上游下载、完整性检查、转换和生成结果结构校验。转换器每次都会重新生成输出，因此生成文件若被误改/误删，下次运行可以自动修复；只有工作树真正变化时才会提交。
 
-无法安全等价转换的晴雅 ABP 路径、modifier 等特殊规则保存在 `rules-sync/rules/unsupported.txt`，不会擅自扩大成整域名拦截。更多转换细节和覆盖统计见 `rules-sync/README.md` 与 `rules-sync/metadata.json`。
+任一上游下载失败、规则数量异常或输出校验失败时，本次任务直接失败，不会用空集或残缺结果覆盖上一版有效规则。
