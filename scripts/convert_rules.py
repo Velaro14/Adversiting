@@ -89,14 +89,16 @@ def abp_host_regex(pattern: str) -> str:
 
     The optional label prefix preserves the || domain-anchor behavior: a fixed
     pattern such as ad-*.example.com also matches x.ad-foo.example.com.
+    ABP network filters are case-insensitive unless $match-case is present;
+    qy-Ads-Rule has no such modifier on the portable wildcard entries.
     """
-    return rf"^(?:[^.]+\.)*{wildcard_fragment(pattern)}$"
+    return rf"(?i)^(?:[^.]+\.)*{wildcard_fragment(pattern)}$"
 
 
 def loon_url_regex(pattern: str) -> str:
     """HTTP(S)-layer compensation for ABP wildcard hostname rules in Loon."""
     fragment = wildcard_fragment(pattern, r"[^/:?#]*")
-    return rf"^https?://(?:[^/:?#.]+\.)*{fragment}(?::\d+)?(?:[/#?]|$)"
+    return rf"(?i)^https?://(?:[^/:?#.]+\.)*{fragment}(?::\d+)?(?:[/#?]|$)"
 
 
 def wildcard_variants(pattern: str) -> list[str]:
