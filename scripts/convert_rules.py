@@ -49,8 +49,8 @@ def loon_url_regex(pattern: str) -> str:
     used only as an HTTP(S)-level compensation and is documented as such.
     """
     escaped = re.escape(pattern)
-    escaped = escaped.replace(r"\*", ".*").replace(r"\?", ".")
-    return rf"^https?://(?:[^/]*\.)?{escaped}(?::\d+)?(?:[/#?]|$)"
+    escaped = escaped.replace(r"\*", r"[^/:?#]*").replace(r"\?", r"[^/:?#]")
+    return rf"^https?://(?:[^/:?#]*\.)?{escaped}(?::\d+)?(?:[/#?]|$)"
 
 
 def parse(text: str):
