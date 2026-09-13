@@ -1,8 +1,9 @@
 # Adversiting
 
-将上游 **晴雅广告拦截规则** 自动转换为多客户端原生规则格式。
+自动同步并合并两个广告拦截上游，转换为多客户端原生规则格式：
 
-上游：`https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt`
+- 晴雅广告拦截规则：`https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt`
+- AdAway default blocklist：`https://adaway.org/hosts.txt`
 
 ## 输出
 
@@ -11,32 +12,35 @@
 | Loon | `rules/Loon.list` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Loon.list` |
 | Surge | `rules/Surge.list` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Surge.list` |
 | Quantumult X | `rules/QuanX.list` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/QuanX.list` |
-| Clash | `rules/Clash.yaml` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Clash.yaml` |
+| Mihomo / Clash.Meta | `rules/Clash.yaml` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Clash.yaml` |
 | sing-box | `rules/SingBox.json` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/SingBox.json` |
 | Xray | `rules/Xray.json` | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Xray.json` |
 
-`upstream/black.txt` 保存最近一次同步的原始规则；`metadata.json` 保存上游版本、SHA256、同步时间和转换统计；`rules/unsupported.txt` 保存无法在所有目标客户端中安全等价转换的 ABP 特殊规则。
+原始上游分别保存为 `upstream/black.txt` 与 `upstream/adaway-hosts.txt`。`metadata.json` 记录两个上游各自 SHA256、解析数量、去重数量、同步时间与各客户端覆盖统计。
 
 ## 转换原则
 
-- `||example.com^` → 域名后缀匹配，例如 Loon/Surge 的 `DOMAIN-SUFFIX,example.com`、QuanX 的 `host-suffix, example.com, reject`、Xray 的 `domain:example.com`。
-- `||*.example.com^` 会归一化为域名后缀规则。
-- 可安全表达的通配域名使用 Surge `DOMAIN-WILDCARD`、QuanX `host-wildcard`、sing-box `domain_regex`、Xray `regexp:`。
-- Clash 使用官方 classical rule-provider 形式；原版 Clash 无法安全等价表示的复杂通配规则不会被扩大成整站拦截。
-- 端口限定规则仅在能够同时表达域名与端口条件的格式中生成；其他客户端会记录到兼容性说明中，不做危险的扩大匹配。
-- 带 URL 路径或 ABP modifier（如 `$app=`）的规则不会被粗暴转换成整域名拦截，避免误杀。
+- 晴雅 `||example.com^` 保持域名后缀语义：Loon/Surge/Mihomo 使用 `DOMAIN-SUFFIX`，QuanX 使用 `host-suffix`，sing-box 使用 `domain_suffix`，Xray 使用 `domain:`。
+- AdAway hosts 条目（例如 `127.0.0.1 ads.example.com`）保持**精确主机名**语义，不扩大成后缀：Loon/Surge/Mihomo 使用 `DOMAIN`，QuanX 使用 `host`，sing-box 使用 `domain`，Xray 使用 `full:`。
+- AdAway 中被晴雅后缀规则已经覆盖的精确域名会去重，避免重复输出。
+- Mihomo / Clash.Meta 使用现代 `DOMAIN-WILDCARD`、`DST-PORT` 与逻辑规则，不兼容旧 Dreamacro Clash。
+- Loon 没有域名级 wildcard/regex；复杂 wildcard 用 `URL-REGEX` 补偿 HTTP/HTTPS，请勿视为完整域名层等价。
+- 带 URL 路径或 ABP modifier（例如 `$app=`）的晴雅规则不会被粗暴扩大成整域名拦截，而是保存在 `rules/unsupported.txt`。
+- 两个上游必须都成功下载后才会生成新结果；任一下载失败，本次同步失败并保留上一次有效规则。
 
-## 官方格式参考
+## 当前格式参考
 
-- Loon：`https://github.com/Loon0x00/LoonExampleConfig/blob/master/Rule/ExampleRule.list`
+- Loon：`https://github.com/Loon0x00/LoonManual`
 - Surge：`https://manual.nssurge.com/rules/ruleset.html`
-- Quantumult X：`https://github.com/crossutility/Quantumult-X/blob/master/filter.snippet`
-- Clash：`https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#rule-providers`
+- Quantumult X：`https://github.com/crossutility/Quantumult-X`
+- Mihomo：`https://wiki.metacubex.one/config/rules/`
 - sing-box：`https://sing-box.sagernet.org/configuration/rule-set/source-format/`
 - Xray：`https://xtls.github.io/config/routing.html`
 
 ## 自动同步
 
-默认分支 `main` 中的 GitHub Actions workflow 每天检查一次上游。工作流会 checkout `rules-sync` 分支，执行 `scripts/convert_rules.py`，只有当**上游内容或转换脚本发生变化**时才重新生成并提交规则，因此不会每天制造无意义提交。
+默认分支 `main` 中的 GitHub Actions workflow 每天约在 **03:17（UTC+8）** 检查两个上游。工作流 checkout `rules-sync`，执行 `scripts/convert_rules.py`，仅当任一上游或转换器发生变化时提交更新。
 
-Xray 输出默认使用 `outboundTag: "block"`，你的 Xray 主配置中需要存在同名的 blackhole outbound；若你的标签不同，请自行替换该字段。
+AdAway 上游文件声明为 CC Attribution 3.0；相关来源与项目归属保留在上游文件及本 README 中。
+
+Xray 输出默认使用 `outboundTag: "block"`，主配置需要存在同名 blackhole outbound；若标签不同，请自行替换。
