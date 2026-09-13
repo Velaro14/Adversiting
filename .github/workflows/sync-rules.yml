@@ -2,7 +2,7 @@ name: Sync upstream advertising rules
 
 on:
   schedule:
-    # 19:17 UTC = 03:17 Asia/Shanghai (next day)
+    # Daily at 19:17 UTC (03:17 UTC+8 on the next calendar day)
     - cron: "17 19 * * *"
   workflow_dispatch:
   push:
