@@ -42,6 +42,17 @@ def wildcard_regex(pattern: str) -> str:
     return f"^{escaped}$"
 
 
+def loon_url_regex(pattern: str) -> str:
+    """Approximate an ABP host wildcard for Loon HTTP(S) URL matching.
+
+    Loon has no domain-level wildcard/regex rule type. URL-REGEX is therefore
+    used only as an HTTP(S)-level compensation and is documented as such.
+    """
+    escaped = re.escape(pattern)
+    escaped = escaped.replace(r"\*", ".*").replace(r"\?", ".")
+    return rf"^https?://(?:[^/]*\.)?{escaped}(?::\d+)?(?:[/#?]|$)"
+
+
 def parse(text: str):
     suffixes: set[str] = set()
     keywords: set[str] = set()
@@ -146,11 +157,20 @@ def build_outputs(headers, suffixes, keywords, wildcards, ports, unsupported, so
     RULES.mkdir(parents=True, exist_ok=True)
     UPSTREAM_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Loon: official remote-rule syntax; wildcard and port-specific rules are
-    # omitted unless they have a safe native equivalent.
+    # Loon: domain wildcard/regex rules do not exist. Preserve exact domain
+    # rules, express port constraints with native logical AND, and compensate
+    # host wildcards at the HTTP(S) layer with URL-REGEX.
     loon = header_lines("#", headers, source_hash)
+    loon += [
+        "# Wildcard note: Loon has no domain-level wildcard rule.",
+        "# The URL-REGEX entries below compensate these rules for HTTP/HTTPS only.",
+        "",
+    ]
     loon += [f"DOMAIN-SUFFIX,{d}" for d in suffixes]
     loon += [f"DOMAIN-KEYWORD,{k}" for k in keywords]
+    loon += [f"URL-REGEX,{loon_url_regex(w)}" for w in wildcards]
+    for port in sorted(ports, key=int):
+        loon += [f"AND,((DOMAIN-SUFFIX,{d}),(DEST-PORT,{port}))" for d in sorted(ports[port])]
     write_text(RULES / "Loon.list", "\n".join(loon))
 
     # Surge external RULE-SET syntax. DOMAIN-WILDCARD and logical AND are
@@ -170,10 +190,22 @@ def build_outputs(headers, suffixes, keywords, wildcards, ports, unsupported, so
     quanx += [f"host-wildcard, {w}, reject" for w in wildcards]
     write_text(RULES / "QuanX.list", "\n".join(quanx))
 
-    # Clash Premium classical rule-provider format.
+    # Mihomo (modern Clash.Meta) classical rule-provider format.
+    # DOMAIN-WILDCARD, DST-PORT and logical AND are native Mihomo rules.
     clash_payload = [f"DOMAIN-SUFFIX,{d}" for d in suffixes]
     clash_payload += [f"DOMAIN-KEYWORD,{k}" for k in keywords]
-    clash = ["# Clash classical rule-provider", f"# Source: {UPSTREAM}", "payload:"]
+    clash_payload += [f"DOMAIN-WILDCARD,{w}" for w in wildcards]
+    for port in sorted(ports, key=int):
+        clash_payload += [
+            f"AND,((DOMAIN-SUFFIX,{d}),(DST-PORT,{port}))"
+            for d in sorted(ports[port])
+        ]
+    clash = [
+        "# Mihomo / Clash.Meta classical rule-provider",
+        "# Requires modern Mihomo rule syntax; legacy Dreamacro Clash is not targeted.",
+        f"# Source: {UPSTREAM}",
+        "payload:",
+    ]
     clash += ["  - " + json.dumps(item, ensure_ascii=False) for item in clash_payload]
     write_text(RULES / "Clash.yaml", "\n".join(clash))
 
@@ -247,6 +279,15 @@ def main() -> int:
             "domain_wildcard": len(wildcards),
             "port_specific": sum(len(v) for v in ports.values()),
             "unsupported": len(unsupported),
+        },
+        "coverage": {
+            "surge_portable_exact": len(suffixes) + len(keywords) + len(wildcards) + sum(len(v) for v in ports.values()),
+            "mihomo_portable_exact": len(suffixes) + len(keywords) + len(wildcards) + sum(len(v) for v in ports.values()),
+            "singbox_portable_exact": len(suffixes) + len(keywords) + len(wildcards) + sum(len(v) for v in ports.values()),
+            "xray_portable_exact": len(suffixes) + len(keywords) + len(wildcards) + sum(len(v) for v in ports.values()),
+            "loon_domain_exact": len(suffixes) + len(keywords) + sum(len(v) for v in ports.values()),
+            "loon_http_compensated_wildcards": len(wildcards),
+            "quanx_without_port": len(suffixes) + len(keywords) + len(wildcards),
         },
     }
     write_text(META, json.dumps(meta, ensure_ascii=False, indent=2))
