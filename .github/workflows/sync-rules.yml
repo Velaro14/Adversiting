@@ -34,16 +34,21 @@ jobs:
         with:
           python-version: "3.12"
 
-      # The converter atomically fetches both qy-Ads-Rule and AdAway.
-      - name: Fetch upstreams and convert
+      - name: Run converter regression tests
+        run: python -m unittest scripts/test_converter.py
+
+      # The converter fetches both sources before writing, rejects suspiciously
+      # small/malformed parses, then validates generated outputs before commit.
+      - name: Fetch upstreams, convert and validate
         run: python scripts/convert_rules.py
 
       - name: Commit updates when changed
         shell: bash
         run: |
+          set -euo pipefail
           git add upstream rules metadata.json
           if git diff --cached --quiet; then
-            echo "No upstream changes."
+            echo "No upstream or generated-output changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
