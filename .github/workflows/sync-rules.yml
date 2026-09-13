@@ -34,7 +34,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch upstream and convert
+      # The converter atomically fetches both qy-Ads-Rule and AdAway.
+      - name: Fetch upstreams and convert
         run: python scripts/convert_rules.py
 
       - name: Commit updates when changed
