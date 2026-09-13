@@ -1,4 +1,5 @@
-# Clash classical rule-provider
+# Mihomo / Clash.Meta classical rule-provider
+# Requires modern Mihomo rule syntax; legacy Dreamacro Clash is not targeted.
 # Source: https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt
 payload:
   - "DOMAIN-SUFFIX,789.kakamobi.cn"
@@ -551,3 +552,22 @@ payload:
   - "DOMAIN-SUFFIX,zlink.toutiao.com"
   - "DOMAIN-SUFFIX,zt.gifshow.com"
   - "DOMAIN-KEYWORD,googleads"
+  - "DOMAIN-WILDCARD,*ad.wtzw.com"
+  - "DOMAIN-WILDCARD,*adintl.cn"
+  - "DOMAIN-WILDCARD,*googleadsserving.cn"
+  - "DOMAIN-WILDCARD,*pangolin*toutiao*.com"
+  - "DOMAIN-WILDCARD,*unityads.unity3d.com"
+  - "DOMAIN-WILDCARD,ad-*.alibabadns.com"
+  - "DOMAIN-WILDCARD,ad-*.alimama.com"
+  - "DOMAIN-WILDCARD,ad-*.kwaidc.com"
+  - "DOMAIN-WILDCARD,ads*.papegames.com"
+  - "DOMAIN-WILDCARD,ads-*.hihonorcloud.com"
+  - "DOMAIN-WILDCARD,ads-*.vivo.com.cn"
+  - "DOMAIN-WILDCARD,ads-*.xhscdn.com"
+  - "DOMAIN-WILDCARD,ads3-*.zijieapi.com"
+  - "DOMAIN-WILDCARD,ads5-*.zijieapi.com"
+  - "DOMAIN-WILDCARD,api-access.pangolin-sdk-toutiao-*.com"
+  - "DOMAIN-WILDCARD,pagead*.googleadservices-cn.com"
+  - "DOMAIN-WILDCARD,pagead*.googlesyndication-cn.com"
+  - "DOMAIN-WILDCARD,pagead*.googlesyndication.com"
+  - "AND,((DOMAIN-SUFFIX,ad.wx.com),(DST-PORT,12638))"
