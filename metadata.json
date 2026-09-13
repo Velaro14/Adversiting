@@ -1,0 +1,15 @@
+{
+  "source": "https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt",
+  "upstream_title": "晴雅广告拦截规则",
+  "upstream_version": "1.8.5",
+  "source_sha256": "9a23b05fcf1bb44a2521f61fb4c7f202a0c7e344171614eaf68684dd97262d42",
+  "converter_sha256": "8f886511f8f642abda022c90194c0e331895eed78229d698debd3e785565651f",
+  "last_sync_utc": "2026-09-13T13:14:54+00:00",
+  "counts": {
+    "domain_suffix": 549,
+    "domain_keyword": 1,
+    "domain_wildcard": 18,
+    "port_specific": 1,
+    "unsupported": 3
+  }
+}
