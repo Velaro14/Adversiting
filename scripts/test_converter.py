@@ -40,6 +40,12 @@ class ConverterTests(unittest.TestCase):
         self.assertTrue(rx.fullmatch("ad-x.y.kwaidc.com"))
         self.assertFalse(rx.fullmatch("badad-x.kwaidc.com"))
 
+    def test_abp_wildcard_projection_is_case_insensitive(self):
+        rx = re.compile(conv.abp_host_regex("ad-*.kwaidc.com"))
+        self.assertTrue(rx.fullmatch("AD-X.KWAIDC.COM"))
+        self.assertTrue(rx.fullmatch("A.B.AD-X.KWAIDC.COM"))
+        self.assertTrue(conv.loon_url_regex("ad-*.kwaidc.com").startswith("(?i)"))
+
     def test_star_dot_excludes_apex(self):
         rx = re.compile(conv.abp_host_regex("*.ads.example.com"))
         self.assertTrue(rx.fullmatch("x.ads.example.com"))
