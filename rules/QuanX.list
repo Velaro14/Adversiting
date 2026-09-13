@@ -135,6 +135,7 @@ host, a.adtechus.com, reject
 host, a.adtng.com, reject
 host, a.api.ad-locus.com, reject
 host, a.appbaqend.com, reject
+host, a.applovin.com, reject
 host, a.applvn.com, reject
 host, a.c.appier.net, reject
 host, a.dpmsrv.com, reject
@@ -288,6 +289,7 @@ host, a3865.casalemedia.com, reject
 host, a3868.casalemedia.com, reject
 host, a3871.casalemedia.com, reject
 host, a3880.casalemedia.com, reject
+host, a4.applovin.com, reject
 host, a50.g2.akamai.net, reject
 host, a527.casalemedia.com, reject
 host, a531.casalemedia.com, reject
@@ -1171,6 +1173,7 @@ host, api.videometrics.ted.com, reject
 host, api.vidora.com, reject
 host, api.viglink.com, reject
 host, api.vigo.ru, reject
+host, api.voiceads.cn, reject
 host, api.vungle.com, reject
 host, api.w.inmobi.com, reject
 host, api.webengage.com, reject
@@ -1353,6 +1356,7 @@ host, applog.camera360.com, reject
 host, applog.matrix.easebar.com, reject
 host, applog.uc.cn, reject
 host, applogios.uc.cn, reject
+host, applovin.com, reject
 host, applvn.com, reject
 host, appmm.zapr.in, reject
 host, appmontize.gotrackier.com, reject
@@ -1427,6 +1431,7 @@ host, assets-v2.yieldify.com, reject
 host, assets.abbi.io, reject
 host, assets.anzuinfra.com, reject
 host, assets.appboycdn.com, reject
+host, assets.applovin.com, reject
 host, assets.bounceexchange.com, reject
 host, assets.connatix.com, reject
 host, assets.customer.io, reject
@@ -1638,6 +1643,7 @@ host, bip.presage.io, reject
 host, bis.vidazoo.com, reject
 host, bisdr.vidazoo.com, reject
 host, bitmedianetwork.com, reject
+host, bj.imp.voiceads.cn, reject
 host, bjfesdk.douyucdn.cn, reject
 host, bk.r-ad.ne.jp, reject
 host, bkrtx.com.edgekey.net, reject
@@ -2408,6 +2414,7 @@ host, d.adsplay.net, reject
 host, d.adx.io, reject
 host, d.agkn.com, reject
 host, d.ants.vn, reject
+host, d.applovin.com, reject
 host, d.applvn.com, reject
 host, d.appsdt.com, reject
 host, d.eu.criteo.com, reject
@@ -2435,6 +2442,7 @@ host, dailymotion-cs.vpadn.com, reject
 host, dailymotionjsvideo432290662219.s.moatpixel.com, reject
 host, daraz-by.accengage.net, reject
 host, dart.l.doubleclick.net, reject
+host, dash.applovin.com, reject
 host, dashapi.chartbeat.com, reject
 host, dashboard.tinypass.com, reject
 host, dat.funheroic.com, reject
@@ -3316,6 +3324,7 @@ host, img-cdn.clinch.co, reject
 host, img.3lift.com, reject
 host, img.adtiming.com, reject
 host, img.apester.com, reject
+host, img.applovin.com, reject
 host, img.connatix.com, reject
 host, img.en25.com, reject
 host, img.flashtalking.com, reject
@@ -3339,6 +3348,7 @@ host, imp.optaim.com, reject
 host, imp.rfp.fout.jp, reject
 host, imp.startappservice.com, reject
 host, imp.track.tappx.com, reject
+host, imp.voiceads.cn, reject
 host, impact.applifier.com, reject
 host, impr.taboola.com, reject
 host, imprammp.taboola.com, reject
@@ -3989,8 +3999,10 @@ host, ms-ads-events.presage.io, reject
 host, ms-ads.presage.io, reject
 host, ms-ads.prod.cloud.ogury.io, reject
 host, ms-auction.presage.io, reject
+host, ms.applovin.com, reject
 host, ms.applvn.com, reject
 host, ms.cmcm.com, reject
+host, ms4.applovin.com, reject
 host, msads.net, reject
 host, msdk-files.webengage.com, reject
 host, msdk.qq.com, reject
@@ -4282,6 +4294,7 @@ host, pca.admarketplace.net, reject
 host, pclick.yahoo.com, reject
 host, pd.sharethis.com, reject
 host, pdn.adingo.jp, reject
+host, pdn.applovin.com, reject
 host, pdx-col.eum-appdynamics.com, reject
 host, pe.intentiq.com, reject
 host, pe1.intentiq.com, reject
@@ -4482,8 +4495,10 @@ host, privacy.commander1.com, reject
 host, privacy.us.criteo.com, reject
 host, privy.com, reject
 host, pro.marinsm.com, reject
+host, prod-a.applovin.com, reject
 host, prod-ads.aerserv.com, reject
 host, prod-ash-beacon-1960876484.us-east-1.elb.amazonaws.com, reject
+host, prod-bid.applovin.com, reject
 host, prod-collecticon.outlookmobile.com, reject
 host, prod-dcs-eventlog.decagames.com, reject
 host, prod-defaulting-subscriptiontool.gismart.xyz, reject
@@ -4493,6 +4508,7 @@ host, prod-m-node-1111.ssp.advertising.com, reject
 host, prod-m-node-1211.ssp.advertising.com, reject
 host, prod-m-node-2111.ssp.advertising.com, reject
 host, prod-m-node-3111.ssp.advertising.com, reject
+host, prod-ms.applovin.com, reject
 host, prod-pdx-beacon-1406086907.us-west-2.elb.amazonaws.com, reject
 host, prod.adjoe.zone, reject
 host, prod.adtechjp.com, reject
@@ -4682,6 +4698,7 @@ host, reports.ubimo.com, reject
 host, req.startappservice.com, reject
 host, res.media.net, reject
 host, res.mmstat.com, reject
+host, res1.applovin.com, reject
 host, researchnow.com, reject
 host, resizer.mantisadnetwork.com, reject
 host, resources.crowdtwist.com, reject
@@ -4730,6 +4747,7 @@ host, rs2.qq.com, reject
 host, rt.ad-score.com, reject
 host, rt.adtiming.com, reject
 host, rt.analytics.anvato.net, reject
+host, rt.applovin.com, reject
 host, rt.applvn.com, reject
 host, rtapi.abbi.io, reject
 host, rtb-csync-itx4.smartadserver.com, reject
@@ -5350,6 +5368,12 @@ host, st-n.ads5-adnow.com, reject
 host, st.bebi.com, reject
 host, st.dynamicyield.com, reject
 host, stackadaptdisplay515602019759.s.moatpixel.com, reject
+host, stage-a.applovin.com, reject
+host, stage-assets.applovin.com, reject
+host, stage-bid.applovin.com, reject
+host, stage-img.applovin.com, reject
+host, stage-ms.applovin.com, reject
+host, stage-pdn.applovin.com, reject
 host, staging-tlx.3lift.com, reject
 host, stags.bluekai.com, reject
 host, startappservice.com, reject
@@ -5958,6 +5982,7 @@ host, uconnect.tealiumiq.com, reject
 host, ud.tubemogul.com, reject
 host, udc-neb.kampyle.com, reject
 host, udm.scorecardresearch.com, reject
+host, ue.applovin.com, reject
 host, ue.flipboard.com, reject
 host, uefa.pushwoosh.com, reject
 host, ufs.adkmob.com, reject
@@ -6519,7 +6544,6 @@ host-suffix, ads-shopping.shouqianba.com, reject
 host-suffix, ads.cup.com.cn, reject
 host-suffix, ads.exoclick.com, reject
 host-suffix, ads.game.iqiyi.com, reject
-host-suffix, ads.heytapmobi.com, reject
 host-suffix, ads.log.kafka.top, reject
 host-suffix, ads.morefreegame.com, reject
 host-suffix, ads.sinaimg.cn, reject
@@ -6591,7 +6615,6 @@ host-suffix, apmplus.volces.com, reject
 host-suffix, app-preload.iqiyi.com, reject
 host-suffix, appcloud2.zhihu.com, reject
 host-suffix, applog.zijieapi.com, reject
-host-suffix, applovin.com, reject
 host-suffix, apps.iad.apple.com, reject
 host-suffix, appupgrade.vivo.com.cn, reject
 host-suffix, as.weixin.qq.com, reject
@@ -6736,7 +6759,6 @@ host-suffix, iyes.youku.com, reject
 host-suffix, janapi.jd.com, reject
 host-suffix, jiaxiao-awd.kakamobi.cn, reject
 host-suffix, jsb.zijieapi.com, reject
-host-suffix, juicyads.me, reject
 host-suffix, kadmimage.biz.weibo.com, reject
 host-suffix, kde.qq.com, reject
 host-suffix, kjp.cupid.iqiyi.com, reject
@@ -6973,7 +6995,6 @@ host-suffix, view-apple.com, reject
 host-suffix, vivotest.oss-cn-beijing.aliyuncs.com, reject
 host-suffix, vod-settings.bytedanceapi.com, reject
 host-suffix, vod-settings.volcvod.com, reject
-host-suffix, voiceads.cn, reject
 host-suffix, vr.gdt.qq.com, reject
 host-suffix, w1.gskwai.com, reject
 host-suffix, w1.kskwai.com, reject
@@ -7021,21 +7042,38 @@ host-suffix, zixun.imtt.qq.com, reject
 host-suffix, zlink.toutiao.com, reject
 host-suffix, zt.gifshow.com, reject
 host-keyword, googleads, reject
+host-wildcard, *.ads.heytapmobi.com, reject
+host-wildcard, *.applovin.com, reject
+host-wildcard, *.juicyads.me, reject
+host-wildcard, *.voiceads.cn, reject
 host-wildcard, *ad.wtzw.com, reject
 host-wildcard, *adintl.cn, reject
 host-wildcard, *googleadsserving.cn, reject
 host-wildcard, *pangolin*toutiao*.com, reject
 host-wildcard, *unityads.unity3d.com, reject
 host-wildcard, ad-*.alibabadns.com, reject
+host-wildcard, *.ad-*.alibabadns.com, reject
 host-wildcard, ad-*.alimama.com, reject
+host-wildcard, *.ad-*.alimama.com, reject
 host-wildcard, ad-*.kwaidc.com, reject
+host-wildcard, *.ad-*.kwaidc.com, reject
 host-wildcard, ads*.papegames.com, reject
+host-wildcard, *.ads*.papegames.com, reject
 host-wildcard, ads-*.hihonorcloud.com, reject
+host-wildcard, *.ads-*.hihonorcloud.com, reject
 host-wildcard, ads-*.vivo.com.cn, reject
+host-wildcard, *.ads-*.vivo.com.cn, reject
 host-wildcard, ads-*.xhscdn.com, reject
+host-wildcard, *.ads-*.xhscdn.com, reject
 host-wildcard, ads3-*.zijieapi.com, reject
+host-wildcard, *.ads3-*.zijieapi.com, reject
 host-wildcard, ads5-*.zijieapi.com, reject
+host-wildcard, *.ads5-*.zijieapi.com, reject
 host-wildcard, api-access.pangolin-sdk-toutiao-*.com, reject
+host-wildcard, *.api-access.pangolin-sdk-toutiao-*.com, reject
 host-wildcard, pagead*.googleadservices-cn.com, reject
+host-wildcard, *.pagead*.googleadservices-cn.com, reject
 host-wildcard, pagead*.googlesyndication-cn.com, reject
+host-wildcard, *.pagead*.googlesyndication-cn.com, reject
 host-wildcard, pagead*.googlesyndication.com, reject
+host-wildcard, *.pagead*.googlesyndication.com, reject

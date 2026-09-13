@@ -135,6 +135,7 @@ DOMAIN,a.adtechus.com
 DOMAIN,a.adtng.com
 DOMAIN,a.api.ad-locus.com
 DOMAIN,a.appbaqend.com
+DOMAIN,a.applovin.com
 DOMAIN,a.applvn.com
 DOMAIN,a.c.appier.net
 DOMAIN,a.dpmsrv.com
@@ -288,6 +289,7 @@ DOMAIN,a3865.casalemedia.com
 DOMAIN,a3868.casalemedia.com
 DOMAIN,a3871.casalemedia.com
 DOMAIN,a3880.casalemedia.com
+DOMAIN,a4.applovin.com
 DOMAIN,a50.g2.akamai.net
 DOMAIN,a527.casalemedia.com
 DOMAIN,a531.casalemedia.com
@@ -1171,6 +1173,7 @@ DOMAIN,api.videometrics.ted.com
 DOMAIN,api.vidora.com
 DOMAIN,api.viglink.com
 DOMAIN,api.vigo.ru
+DOMAIN,api.voiceads.cn
 DOMAIN,api.vungle.com
 DOMAIN,api.w.inmobi.com
 DOMAIN,api.webengage.com
@@ -1353,6 +1356,7 @@ DOMAIN,applog.camera360.com
 DOMAIN,applog.matrix.easebar.com
 DOMAIN,applog.uc.cn
 DOMAIN,applogios.uc.cn
+DOMAIN,applovin.com
 DOMAIN,applvn.com
 DOMAIN,appmm.zapr.in
 DOMAIN,appmontize.gotrackier.com
@@ -1427,6 +1431,7 @@ DOMAIN,assets-v2.yieldify.com
 DOMAIN,assets.abbi.io
 DOMAIN,assets.anzuinfra.com
 DOMAIN,assets.appboycdn.com
+DOMAIN,assets.applovin.com
 DOMAIN,assets.bounceexchange.com
 DOMAIN,assets.connatix.com
 DOMAIN,assets.customer.io
@@ -1638,6 +1643,7 @@ DOMAIN,bip.presage.io
 DOMAIN,bis.vidazoo.com
 DOMAIN,bisdr.vidazoo.com
 DOMAIN,bitmedianetwork.com
+DOMAIN,bj.imp.voiceads.cn
 DOMAIN,bjfesdk.douyucdn.cn
 DOMAIN,bk.r-ad.ne.jp
 DOMAIN,bkrtx.com.edgekey.net
@@ -2408,6 +2414,7 @@ DOMAIN,d.adsplay.net
 DOMAIN,d.adx.io
 DOMAIN,d.agkn.com
 DOMAIN,d.ants.vn
+DOMAIN,d.applovin.com
 DOMAIN,d.applvn.com
 DOMAIN,d.appsdt.com
 DOMAIN,d.eu.criteo.com
@@ -2435,6 +2442,7 @@ DOMAIN,dailymotion-cs.vpadn.com
 DOMAIN,dailymotionjsvideo432290662219.s.moatpixel.com
 DOMAIN,daraz-by.accengage.net
 DOMAIN,dart.l.doubleclick.net
+DOMAIN,dash.applovin.com
 DOMAIN,dashapi.chartbeat.com
 DOMAIN,dashboard.tinypass.com
 DOMAIN,dat.funheroic.com
@@ -3316,6 +3324,7 @@ DOMAIN,img-cdn.clinch.co
 DOMAIN,img.3lift.com
 DOMAIN,img.adtiming.com
 DOMAIN,img.apester.com
+DOMAIN,img.applovin.com
 DOMAIN,img.connatix.com
 DOMAIN,img.en25.com
 DOMAIN,img.flashtalking.com
@@ -3339,6 +3348,7 @@ DOMAIN,imp.optaim.com
 DOMAIN,imp.rfp.fout.jp
 DOMAIN,imp.startappservice.com
 DOMAIN,imp.track.tappx.com
+DOMAIN,imp.voiceads.cn
 DOMAIN,impact.applifier.com
 DOMAIN,impr.taboola.com
 DOMAIN,imprammp.taboola.com
@@ -3989,8 +3999,10 @@ DOMAIN,ms-ads-events.presage.io
 DOMAIN,ms-ads.presage.io
 DOMAIN,ms-ads.prod.cloud.ogury.io
 DOMAIN,ms-auction.presage.io
+DOMAIN,ms.applovin.com
 DOMAIN,ms.applvn.com
 DOMAIN,ms.cmcm.com
+DOMAIN,ms4.applovin.com
 DOMAIN,msads.net
 DOMAIN,msdk-files.webengage.com
 DOMAIN,msdk.qq.com
@@ -4282,6 +4294,7 @@ DOMAIN,pca.admarketplace.net
 DOMAIN,pclick.yahoo.com
 DOMAIN,pd.sharethis.com
 DOMAIN,pdn.adingo.jp
+DOMAIN,pdn.applovin.com
 DOMAIN,pdx-col.eum-appdynamics.com
 DOMAIN,pe.intentiq.com
 DOMAIN,pe1.intentiq.com
@@ -4482,8 +4495,10 @@ DOMAIN,privacy.commander1.com
 DOMAIN,privacy.us.criteo.com
 DOMAIN,privy.com
 DOMAIN,pro.marinsm.com
+DOMAIN,prod-a.applovin.com
 DOMAIN,prod-ads.aerserv.com
 DOMAIN,prod-ash-beacon-1960876484.us-east-1.elb.amazonaws.com
+DOMAIN,prod-bid.applovin.com
 DOMAIN,prod-collecticon.outlookmobile.com
 DOMAIN,prod-dcs-eventlog.decagames.com
 DOMAIN,prod-defaulting-subscriptiontool.gismart.xyz
@@ -4493,6 +4508,7 @@ DOMAIN,prod-m-node-1111.ssp.advertising.com
 DOMAIN,prod-m-node-1211.ssp.advertising.com
 DOMAIN,prod-m-node-2111.ssp.advertising.com
 DOMAIN,prod-m-node-3111.ssp.advertising.com
+DOMAIN,prod-ms.applovin.com
 DOMAIN,prod-pdx-beacon-1406086907.us-west-2.elb.amazonaws.com
 DOMAIN,prod.adjoe.zone
 DOMAIN,prod.adtechjp.com
@@ -4682,6 +4698,7 @@ DOMAIN,reports.ubimo.com
 DOMAIN,req.startappservice.com
 DOMAIN,res.media.net
 DOMAIN,res.mmstat.com
+DOMAIN,res1.applovin.com
 DOMAIN,researchnow.com
 DOMAIN,resizer.mantisadnetwork.com
 DOMAIN,resources.crowdtwist.com
@@ -4730,6 +4747,7 @@ DOMAIN,rs2.qq.com
 DOMAIN,rt.ad-score.com
 DOMAIN,rt.adtiming.com
 DOMAIN,rt.analytics.anvato.net
+DOMAIN,rt.applovin.com
 DOMAIN,rt.applvn.com
 DOMAIN,rtapi.abbi.io
 DOMAIN,rtb-csync-itx4.smartadserver.com
@@ -5350,6 +5368,12 @@ DOMAIN,st-n.ads5-adnow.com
 DOMAIN,st.bebi.com
 DOMAIN,st.dynamicyield.com
 DOMAIN,stackadaptdisplay515602019759.s.moatpixel.com
+DOMAIN,stage-a.applovin.com
+DOMAIN,stage-assets.applovin.com
+DOMAIN,stage-bid.applovin.com
+DOMAIN,stage-img.applovin.com
+DOMAIN,stage-ms.applovin.com
+DOMAIN,stage-pdn.applovin.com
 DOMAIN,staging-tlx.3lift.com
 DOMAIN,stags.bluekai.com
 DOMAIN,startappservice.com
@@ -5958,6 +5982,7 @@ DOMAIN,uconnect.tealiumiq.com
 DOMAIN,ud.tubemogul.com
 DOMAIN,udc-neb.kampyle.com
 DOMAIN,udm.scorecardresearch.com
+DOMAIN,ue.applovin.com
 DOMAIN,ue.flipboard.com
 DOMAIN,uefa.pushwoosh.com
 DOMAIN,ufs.adkmob.com
@@ -6519,7 +6544,6 @@ DOMAIN-SUFFIX,ads-shopping.shouqianba.com
 DOMAIN-SUFFIX,ads.cup.com.cn
 DOMAIN-SUFFIX,ads.exoclick.com
 DOMAIN-SUFFIX,ads.game.iqiyi.com
-DOMAIN-SUFFIX,ads.heytapmobi.com
 DOMAIN-SUFFIX,ads.log.kafka.top
 DOMAIN-SUFFIX,ads.morefreegame.com
 DOMAIN-SUFFIX,ads.sinaimg.cn
@@ -6591,7 +6615,6 @@ DOMAIN-SUFFIX,apmplus.volces.com
 DOMAIN-SUFFIX,app-preload.iqiyi.com
 DOMAIN-SUFFIX,appcloud2.zhihu.com
 DOMAIN-SUFFIX,applog.zijieapi.com
-DOMAIN-SUFFIX,applovin.com
 DOMAIN-SUFFIX,apps.iad.apple.com
 DOMAIN-SUFFIX,appupgrade.vivo.com.cn
 DOMAIN-SUFFIX,as.weixin.qq.com
@@ -6736,7 +6759,6 @@ DOMAIN-SUFFIX,iyes.youku.com
 DOMAIN-SUFFIX,janapi.jd.com
 DOMAIN-SUFFIX,jiaxiao-awd.kakamobi.cn
 DOMAIN-SUFFIX,jsb.zijieapi.com
-DOMAIN-SUFFIX,juicyads.me
 DOMAIN-SUFFIX,kadmimage.biz.weibo.com
 DOMAIN-SUFFIX,kde.qq.com
 DOMAIN-SUFFIX,kjp.cupid.iqiyi.com
@@ -6973,7 +6995,6 @@ DOMAIN-SUFFIX,view-apple.com
 DOMAIN-SUFFIX,vivotest.oss-cn-beijing.aliyuncs.com
 DOMAIN-SUFFIX,vod-settings.bytedanceapi.com
 DOMAIN-SUFFIX,vod-settings.volcvod.com
-DOMAIN-SUFFIX,voiceads.cn
 DOMAIN-SUFFIX,vr.gdt.qq.com
 DOMAIN-SUFFIX,w1.gskwai.com
 DOMAIN-SUFFIX,w1.kskwai.com
@@ -7021,22 +7042,39 @@ DOMAIN-SUFFIX,zixun.imtt.qq.com
 DOMAIN-SUFFIX,zlink.toutiao.com
 DOMAIN-SUFFIX,zt.gifshow.com
 DOMAIN-KEYWORD,googleads
+DOMAIN-WILDCARD,*.ads.heytapmobi.com
+DOMAIN-WILDCARD,*.applovin.com
+DOMAIN-WILDCARD,*.juicyads.me
+DOMAIN-WILDCARD,*.voiceads.cn
 DOMAIN-WILDCARD,*ad.wtzw.com
 DOMAIN-WILDCARD,*adintl.cn
 DOMAIN-WILDCARD,*googleadsserving.cn
 DOMAIN-WILDCARD,*pangolin*toutiao*.com
 DOMAIN-WILDCARD,*unityads.unity3d.com
 DOMAIN-WILDCARD,ad-*.alibabadns.com
+DOMAIN-WILDCARD,*.ad-*.alibabadns.com
 DOMAIN-WILDCARD,ad-*.alimama.com
+DOMAIN-WILDCARD,*.ad-*.alimama.com
 DOMAIN-WILDCARD,ad-*.kwaidc.com
+DOMAIN-WILDCARD,*.ad-*.kwaidc.com
 DOMAIN-WILDCARD,ads*.papegames.com
+DOMAIN-WILDCARD,*.ads*.papegames.com
 DOMAIN-WILDCARD,ads-*.hihonorcloud.com
+DOMAIN-WILDCARD,*.ads-*.hihonorcloud.com
 DOMAIN-WILDCARD,ads-*.vivo.com.cn
+DOMAIN-WILDCARD,*.ads-*.vivo.com.cn
 DOMAIN-WILDCARD,ads-*.xhscdn.com
+DOMAIN-WILDCARD,*.ads-*.xhscdn.com
 DOMAIN-WILDCARD,ads3-*.zijieapi.com
+DOMAIN-WILDCARD,*.ads3-*.zijieapi.com
 DOMAIN-WILDCARD,ads5-*.zijieapi.com
+DOMAIN-WILDCARD,*.ads5-*.zijieapi.com
 DOMAIN-WILDCARD,api-access.pangolin-sdk-toutiao-*.com
+DOMAIN-WILDCARD,*.api-access.pangolin-sdk-toutiao-*.com
 DOMAIN-WILDCARD,pagead*.googleadservices-cn.com
+DOMAIN-WILDCARD,*.pagead*.googleadservices-cn.com
 DOMAIN-WILDCARD,pagead*.googlesyndication-cn.com
+DOMAIN-WILDCARD,*.pagead*.googlesyndication-cn.com
 DOMAIN-WILDCARD,pagead*.googlesyndication.com
+DOMAIN-WILDCARD,*.pagead*.googlesyndication.com
 AND,((DOMAIN-SUFFIX,ad.wx.com),(DEST-PORT,12638))
