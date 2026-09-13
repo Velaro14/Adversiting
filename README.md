@@ -1,6 +1,6 @@
 # Adversiting
 
-自动同步并转换 **晴雅广告拦截规则**，输出 Loon、Surge、Quantumult X、Clash、sing-box、Xray 六种客户端格式。
+自动同步并转换 **晴雅广告拦截规则**，输出 Loon、Surge、Quantumult X、Mihomo（Clash.Meta）、sing-box、Xray 六种客户端格式。
 
 上游：`https://raw.githubusercontent.com/rssvcn/qy-Ads-Rule/main/black.txt`
 
@@ -13,9 +13,15 @@
 | Loon | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Loon.list` |
 | Surge | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Surge.list` |
 | Quantumult X | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/QuanX.list` |
-| Clash | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Clash.yaml` |
+| Mihomo / Clash.Meta | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Clash.yaml` |
 | sing-box | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/SingBox.json` |
 | Xray | `https://raw.githubusercontent.com/Velaro14/Adversiting/rules-sync/rules/Xray.json` |
+
+## 兼容性说明
+
+`Clash.yaml` 以现代 **Mihomo / Clash.Meta** 为目标，不再兼容旧 Dreamacro Clash 内核，因此可使用 `DOMAIN-WILDCARD`、`DST-PORT` 与逻辑规则完整表达当前上游可移植规则。
+
+Loon 原生没有域名级 wildcard/regex 类型：普通域名与端口条件使用原生规则精确转换；复杂 wildcard 额外使用 `URL-REGEX` 补偿 HTTP/HTTPS 请求，但这部分不等同于域名层 100% 语义覆盖。
 
 ## 自动更新
 
